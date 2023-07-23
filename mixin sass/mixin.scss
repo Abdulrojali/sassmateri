@@ -1,0 +1,59 @@
+// mixin adalah sebuah fungsi yang didalamnya terdapat syntaks css yang digunakan berulangkali
+// 1. contoh penggunaan mixin
+
+//pembuatan mixin
+@mixin flex-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+// penggunaan mixin
+.pertama{
+    @include flex-column()
+}
+
+.kedua{
+    @include flex-column()
+}
+
+.ketiga{
+    @include flex-column()
+}
+// code di atas digunakan pada setiap parent element untuk mensejajarkan child secara horizontal
+
+
+
+// 2. contoh penggunaan parameter pada mixin
+// pembuatan parameter jarak-li 
+@mixin jarak-li($jarak){
+    width: 100%;
+    display: flex;
+    justify-content: $jarak;
+    align-items: center;
+}
+
+// pemberian parameter pada fungsi jarak-li
+.pertama ul{
+    @include jarak-li(space-around)
+}
+// hasilnya ul pada class pertama akan berjarak secara vertikal 
+
+
+@mixin button-hover{
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    width: 70px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.click:hover{
+    @include button-hover()
+}
+.cancel:hover{
+    @include button-hover()
+}

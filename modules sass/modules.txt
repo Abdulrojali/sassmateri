@@ -1,0 +1,35 @@
+modules adalah sebuah compile dari beberapa file atau document
+memisahkan beberapa file dan di panggil oleh beberapa code
+
+1. import dan use digunakan untuk memanggil file yang akan di gunakan dalam code tersebut
+
+a. penggunaan import
+@import 'directory file'
+note import tidak recomend untuk di gunakan karena file nya akan dalam bentuk global 
+importkan file yang akan di gunakan maka file tersebut akan langsung bisa di gunakan
+contoh 
+1. apabila folder nya di document sama
+@import 'flex';
+
+2. apabila foldernya di dalam document flex
+@import 'flex/flex'
+.container{
+    @include flex-box();
+}
+
+
+b. penggunaan use
+ note untuk menggunakan use akan lebih susah di bandingkan menggunakan import
+ @use 'directory file'
+
+// gunakan _ untuk menjadikan file parsial artinya bukan file utama 
+contoh:  _nama
+1.buat 2 document terpisah
+2. document utama digunakan untuk menimport document mixin
+3. document mixin di sesuaikan dengan document utama dengan 
+cara: sass [nama document]/mixin.scss [nama document]/utama.css  
+artinya compile file scss di folder mixin kedalam folder utama css.
+4. jalankan use didalam folder utama :  @use 'mixin/mixin' as m;
+artinya memanggil mixin didalam folder document mixin dengan singkatan m;
+5. @include m.flex-box;
+6. selamat anda berhasil

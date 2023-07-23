@@ -1,0 +1,47 @@
+.pertama {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.kedua {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ketiga {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pertama ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.click:hover {
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  width: 70px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.cancel:hover {
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  width: 70px;
+  height: 30px;
+  cursor: pointer;
+}/*# sourceMappingURL=mixin.css.map */

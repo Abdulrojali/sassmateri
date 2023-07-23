@@ -1,0 +1,9 @@
+built in adalah sebuah case untuk control componen pada sass
+
+1. sass:color
+2. sass:list
+3. sass:map
+4. sass:math
+5. sass:meta
+6. sass:selector
+7. sass:string

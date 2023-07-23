@@ -1,0 +1,13 @@
+// contoh pembuatan variabel di sass
+// ini adalah variabel global 
+$warna-background:orange;
+$warna-teks:black;
+
+
+// varibel sass tidak bisa di gunakan di kondisi scope
+// contoh
+.container{
+    // ini adalah variabel lokal yang bisa di akses di scope nya 
+    $warna-background:blue;
+    background-color: $warna-background;
+}

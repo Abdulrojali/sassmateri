@@ -1,0 +1,31 @@
+
+@mixin flex-box($space){
+    width: 100%;
+    display: flex;
+    justify-content: $space;
+    align-items: center;
+}
+@mixin flex-column($gap){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+}
+@mixin flex-gap($gap){
+    display: flex;
+    gap: $gap;
+    justify-content: center;
+    align-items: center;
+}
+@mixin grid-responsive($content){
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    grid-gap:$content;
+}
+@mixin grid-content($content){
+    display: grid;
+    grid-template-columns: $content;
+    grid-gap:15px;
+}

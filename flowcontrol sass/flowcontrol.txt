@@ -1,0 +1,103 @@
+flowcontrol dalam sass adalah alur kendali 
+beberapa macam alur kendali dalam sass diantaranya ;
+1. @if
+contoh penggunaan
+// pembuatan if dan else pada sass
+@mixin gantiWarna($warna,$status:false){
+    padding:20px;
+    border-radius:5px;
+    @if $status{
+        background-color:$warna;
+        color:white;
+    }
+    @else{
+        color:black;
+    }
+}
+.container-1{
+    @include gantiWarna(green,$status:false);
+}
+.container-2{
+    @include gantiWarna(orange,$status:true);
+}
+
+2. @if else
+@mixin buttonClick($value,$btntext){
+    padding:20px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    @if $value=='biru'{
+        background-color:$value;
+        color:$btntext;
+    }
+    @else if $value == 'red'{
+        background-color:$value;
+        color:$btntext;
+    }
+    @else{
+        background-color:white;
+        color:black;
+    }
+}
+.container-1{
+    @include buttonClick(biru,white);
+}
+.container-2{
+    @include buttonClick(red,white);
+}
+
+
+3. @for
+// contoh apabila di file html terdapat ul dengan class flex dan didalam nya terdapat 10 buah li
+.flex{
+    display:'flex';
+    flex-direction:column;
+    gap:7px;
+    
+    // artinya i dengan indeks 1 akan looping sampai 11 kali 
+    @for $i from 1 to 11{
+        // untuk mengambil indeks i harus menggunakan interoplasi yaitu #{}
+        li:nth-child(#{$i}){
+            color:white;
+            // lighteen adalah fungsi pada sass untuk mengatur warna
+            // code di bawah artinya setiap li akan di loop dengan background degradasinya bertambah 2% setiap looping bertambah
+            background-color:lighteen($color,$i *2%);
+        }
+    }
+}
+
+4. @while
+//declaration i
+
+$i:1;
+@while $i<11{
+ li:nth-child(#{$i}){
+            color:white;
+            background-color:lighteen($color,$i *2%);
+        }
+        // artinya i akan bertambah 1 seiring di looping
+        $i: $i+1;
+}
+
+5. @each
+// misalkan kita membuat ul dengan class list dan didalam nya terdapat 5 buah li 
+.list{
+    display:flex;
+    flex-direction:column;
+    gap:10px
+
+}
+$sosial-color{
+    facebook:blue;
+    twitter:blue;
+    whatsapp:lighteen;
+    instagram:purple;
+}
+.list:hover{
+ @each $param,$color in $sosial-color{
+    .#{$param}{
+        color:$color;
+    }
+ }
+}

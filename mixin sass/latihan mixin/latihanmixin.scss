@@ -1,0 +1,184 @@
+$primary-color:white;
+$second-color:black;
+$background-color:orange;
+$font-sm:1em;
+$font-lg:2em;
+$font-family:sans-serif;
+$font-h3:800;
+$font-p:150;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $font-family;
+}
+@mixin flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-box($space){
+    width: 100%;
+    display: flex;
+    justify-content: $space;
+    align-items: center;
+}
+@mixin flex-gap{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+@mixin flex-column($input){
+    display: flex;
+    flex-direction: $input;
+    gap: 5px;
+}
+@mixin grids-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    grid-gap: 10px;
+}
+@mixin btn{
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+@mixin btn-hover($content){
+    border: 1px solid black;
+    color: black;
+    background-color:$content;
+    opacity: .5;
+}
+
+body{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+.container-navigasi{
+    @include flex-column(column);
+    width: 25%;
+    padding: 0 20px;
+    height: 100%;
+    background-color: $background-color;
+    
+    .navigasi-logo{
+        @include flex-box(space-around);
+        width: 100%;
+        a{
+            text-decoration: none;
+            color: black;
+            font-size: $font-lg;
+            font-weight: $font-h3;
+            text-transform: capitalize;
+        }
+        i{
+            cursor: pointer;
+        }
+    }
+    .navigasi-content{
+        ul{
+            @include flex-column(column);
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+        }
+        li{
+            @include btn();
+            text-align: center;
+            line-height: 30px;
+        }
+        li:hover{
+            @include btn-hover(white);
+        }
+    }
+}
+
+.container-content{
+    background-color: $second-color;
+    width: 75%;
+    padding: 0 20px;
+    height: 100%;
+    @include flex-column(column);
+
+    header{
+        @include flex-box(space-around);
+        .listicon{
+            width: 100%;
+            ul{
+                padding: 20px 0;
+                list-style-type: none;
+                @include flex-box(space-around);
+                i{
+                    color: white;
+                    font-size: $font-sm;
+                }
+                i:hover{
+                    text-align: center;
+                    line-height: 30px;
+                    color: white;
+                    @include btn();
+                }
+            }
+        }
+    }
+    main{
+        padding: 20px 0;
+        width: 100%;
+        @include flex();
+        .main-grids{
+            width: 100%;
+            @include grids-content();
+        }
+        .grid-content{
+            padding: 15px;
+            @include flex-column(column);
+            h3,p{
+              color: $primary-color;  
+            }
+            button{
+                @include btn();
+            }
+            button:hover{
+                @include btn-hover(orange);
+            }
+        }
+    }
+    aside{
+        width: 100%;
+        @include flex();
+        .img-caroulise{
+            display: inline-block;
+            padding: 20px;
+            height: 100px;
+            width: 100%;
+            @include flex-box(space-between);
+            i{
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    body{
+        @include flex-column(column);
+        background-color: orange;
+    }
+    .container-navigasi,.container-content{
+        width: 100%;
+        height: 100%;
+    }
+.navigasi-content{
+        ul{
+            @include flex-box(space-around);
+        }
+    }
+}

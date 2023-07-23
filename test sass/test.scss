@@ -1,0 +1,16 @@
+$bg-color:red;
+$font-color:black;
+$font-hover:white;
+$bg-hover:orange;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: $font-hover;
+}
+.container{
+    width: 100%;
+    height: 50vh;
+    background-color: $bg-color;
+}

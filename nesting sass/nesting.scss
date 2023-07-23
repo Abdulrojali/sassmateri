@@ -1,0 +1,125 @@
+// &(Dan) adalah sebuah sintaks untuk menyeleksi parent element
+// contoh
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &logo{
+        font-size: 2em;
+        font-weight: 800;
+    }
+    &links{
+        ul{
+            display: flex;
+            gap: 20px;
+            list-style-type: none;
+        }
+        li{
+            a{
+                color: black;
+                text-decoration: none;
+            }
+        }
+    }
+}
+// ini adalah membuat variabel menggunakan sass
+$color-hv:white;
+$color-df:black;
+$btn-hv:red;
+$font-sm:1em;
+$font-lg:1.5em;
+$font-hg:2em;
+$font-fm:times New Roman;
+$font-wm:100;
+$font-hm:800;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+}
+// ini adalah contoh nesting
+// nav{
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+//     padding: 20px 10px;
+//     border-bottom: 1px solid gray;
+//     .navlogo{
+//         h3{
+//             font:$font-hg $font-fm;
+//         }
+//     }
+//     .navlinks{
+//         ul{
+//             display: flex;
+//             gap:25px;
+//         }
+//         li{
+//             list-style-type: none;
+//         }
+//         a{
+//             text-decoration: none;
+//             color: $color-df;
+//             font-size: $font-sm;
+//             font-weight: $font-wm;
+//         }
+//         a:hover{
+//             padding: 5px 8px;
+//             border: none;
+//             border-radius: 5px;
+//             color: $color-hv;
+//             background-color: $btn-hv;
+//         }
+//     }
+// }
+
+// main{
+//     margin-top: 10px;
+//     width: 100%;
+//     height: 50vh;
+//     display: flex;
+//     justify-content: space-around;
+//     .content-pertama{
+//         width: 50%;
+//         padding: 20px;
+//         img{
+//             display: inline-block;
+//             width: 100%;
+//             height: 250px;
+//             border: 1px solid black;
+//         }
+//     }
+//     .content-kedua{
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//         width: 50%;
+//         padding: 20px;
+//         .biodata{
+//             ul{
+//                 display: flex;
+//                 flex-direction: column;
+//                 gap: 8px;
+//                 list-style-type: none;
+//             }
+//             li{
+//                 display: flex;
+//                 gap: 10px;
+//                 span{
+//                     font-size: $font-sm;
+//                     font-weight: $font-hm;
+//                 }
+//             }
+            
+//         }
+//     }
+// }
+
+
+
